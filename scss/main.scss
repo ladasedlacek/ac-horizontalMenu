@@ -1,0 +1,198 @@
+// Main colors
+$primary: #1653A4;
+$secondary: #f3f3f3;
+$white: #fff ;
+$black: #000;
+$gray: #535252;
+$dark: #262F38;
+
+// Imports
+@import "reset";
+@import "mixins";
+@import "settings";
+@import "alza";
+
+// WEB
+#landingpage{
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    // NAVIGATION
+    .lp-nav-box{
+        min-height: 65px;
+
+        .lp-nav{
+            background-color: $white;
+            box-shadow: 0 3px 6px rgba($color: $black, $alpha: .15);
+            z-index: 99999;
+            @include flex-center;
+            justify-content: space-between;
+            padding: 20px 40px;
+            width: calc(1255px - 80px);
+    
+            &__left{
+                &--menu{
+                    @include flex-center;
+                }
+
+                .itemLogo{
+                    width: 120px;
+                    max-height: 30px;
+                }
+
+                &--logo{
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+    
+                &--item{
+                    &:last-of-type{
+                        padding-right: 0;
+                    }
+    
+                    padding-right: 32px;
+                }
+
+                .anotherArticle{
+                    padding: 5px 15px;
+                    border-radius: 4px;
+                    background: $sport;
+                    transition: .3s ease-in-out;
+
+                    &:hover{
+                        cursor: pointer;
+                        background: darken($color: $sport, $amount: 6%);
+                    }
+
+                    &:active{
+                        background: darken($color: $sport, $amount: 12%);
+                    }
+
+                    .lp-nav__left--link{
+                        color: $white;
+
+                        &::after{
+                            display: none;
+                        }
+                    }
+                }
+    
+                &--link{
+                    color: #212121;
+                    font-weight: 600;
+                    font-size: 14px;
+                    display: inline-block;
+                    position: relative;
+                    transition: .3s ease-in-out;
+    
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 2px;
+                        background-color: $primary;
+                        left: 0;
+                        bottom: -2px;
+                        transition: .3s ease-in-out;
+                    }
+    
+                    &:hover,
+                    &:focus{
+                        &::after{
+                            width: 100%;
+                        }
+    
+                        color: $primary;
+    
+                        .notMoveH1{
+                            color: $primary;
+                        }
+                    }
+    
+                    .notMoveH1{
+                        color: $alza;
+                        font-size: 16px;
+                        font-weight: 700;
+                        display: inline-block;
+                        transition: .3s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+
+    .fixed{
+        position: fixed;
+        top: 0;
+    }
+}
+
+// Alza styles
+#header.fixed{
+    opacity: 0;
+    visibility: hidden;
+}
+
+// LAYOUT 0
+.layout-0 #articlePage #landingpage{
+    .lp-container{
+        max-width: 860px;
+    } 
+
+    .lp-nav{
+        width: calc(980px - 64px);
+        padding: 20px 32px;
+    }
+
+    .lp-nav__left--item{
+        padding-right: 24px;
+
+        &:last-of-type{
+            padding-right: 0;
+        }
+    }
+}
+
+// MOBILE + APP
+@media only screen and (max-width: 980px){
+    .mobile #articlePage #landingpage,
+    .mobileapp #articlePage #landingpage{
+        .lp-container{
+            padding-left: 32px;
+            padding-right: 32px;
+            max-width: 100%;
+        }
+
+        // NAV
+        .lp-nav-box{
+            display: none;
+        }
+        /* .lp-nav{
+            display: block;
+            width: calc(100% - 80px);
+            position: relative;
+
+            &__left--menu{
+                display: block;
+                text-align: center;
+            }
+
+            .lp-nav__left--item{
+                padding: 12px 0;
+                display: block;
+                border-bottom: 1px solid rgba($color: $black, $alpha: .15);
+
+                &:last-of-type{
+                    border-bottom: none;
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        .lp-nav-box .lp-nav__left .itemLogo{
+            margin: 0 auto;
+            border-bottom: none !important;
+        } */
+    }
+}

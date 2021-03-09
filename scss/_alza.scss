@@ -1,0 +1,144 @@
+// Alza colors
+$alza: #00275b;
+$sport: #a1c900;
+$zabava: #0094e7;
+$hracky: #fd7528;
+$maxi: #e9242e;
+$beauty: #c7b276;
+$hobby: #764510;
+$moto: #262F38;
+$pet: #cb8f10;
+
+$alza-colors: (
+    'alza': #00275b,
+    'sport': #a1c900,
+    'zabava': #0094e7,
+    'hracky': #fd7528,
+    'maxi': #e9242e,
+    'beauty': #c7b276,
+    'hobby': #764510,
+    'moto': #262F38,
+    'pet': #cb8f10,
+    'white': #fff,
+    'gray': #F4F5F5
+);
+
+// Alza gradients
+@each $name, $hex in $alza-colors {
+    #landingpage .grad-#{$name}{
+        background: linear-gradient(to right, $hex, lighten($hex, 12%));
+    }
+}
+
+// Alza button
+@mixin height($value) {
+    line-height: $value + px;
+    height: $value + px;
+}
+
+#landingpage .btn{
+    display: inline-block;
+    padding: 0 24px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba($color: $black, $alpha: .15);
+    @include height(40);
+
+    &--small{
+        @include height(32);
+    }
+
+    &--big{
+        @include height(60);
+        padding: 0 32px;
+    }
+
+    &--dis{
+        opacity: .5;
+        cursor: auto;
+
+        &::before{
+            display: none;
+        }
+    }
+
+    // Circle effect
+    &::before{
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 50%);
+        opacity: 0;
+        transition: .55s ease-in-out;
+    }
+
+    &:hover::before{
+        width: 280px;
+        height: 280px;
+        opacity: 1;
+    }
+
+    // Button text
+    .btn-text{
+        @include roboto;
+        font-size: 14px;
+        font-weight: 700;
+        color: $white;
+        position: relative;
+        z-index: 3;
+        transition: .3s ease-in-out;
+        letter-spacing: .5px;
+    }
+}
+
+#landingpage .btn--big .btn-text{
+    font-size: 20px;
+}
+
+// Extend all BTN class for each colors
+@each $name, $hex in $alza-colors {
+    #landingpage .btn-#{$name}{
+        @extend .btn;
+        background: $hex;
+
+        &::before{
+            background: darken($color: $hex, $amount: 6%);
+        }
+
+        &:active::before{
+            background: darken($color: $hex, $amount: 12%);
+        }
+    }
+}
+
+// Color change for White & Gray version of button
+#landingpage .btn-white .btn-text,
+#landingpage .btn-gray .btn-text{
+    color: #535252;
+}
+
+// Alza styles
+#articlePage #landingpage #newSocialContainer{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 48px 0 80px;
+}
+
+// Section top shadow
+#landingpage{
+    .add-shadow{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

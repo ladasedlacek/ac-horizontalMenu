@@ -1,0 +1,80 @@
+#landingpage{
+    max-width: 1255px;
+    font-size: 16px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+
+    * > {
+        box-sizing: border-box;
+    } 
+
+    // Container
+    .lp-container{
+        max-width: 1084px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+
+    // Images
+    img{
+        display: block;
+    }
+
+    // Font settings
+    .notMoveH1,
+    .lp-heading-2,
+    .lp-heading-3,
+    .lp-heading-4{
+        font-weight: 700;
+        color: $black;
+        @include poppins;
+        display: block;
+    }
+    
+    .notMoveH1{
+        font-size: 48px;
+        line-height: 1.2;
+    }
+
+    .lp-heading-2{
+        font-size: 40px;
+        line-height: 1.2;
+    }
+        
+    .lp-heading-3{
+        font-size: 20px;
+        line-height: 1.3;
+    }
+    
+    .lp-heading-4{
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    p,
+    span,
+    a,
+    li{
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 400;
+        @include roboto;
+        color: $black;
+    }
+
+    strong{
+        font-weight: 700;
+    }
+
+    // LINKS
+    a{
+        text-decoration: none
+    }
+
+    section{
+        position: relative;
+    }
+}
