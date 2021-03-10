@@ -1,12 +1,12 @@
 // Sticky nav
-var stickyNav=function(){​​​​​​​​
+var stickyNav = function(){​​​​​​​​
 	var scrollTop = $(window).scrollTop();
 	var stickyNavTop = $('.lp-nav-box').offset().top;
-	var lpHeight = $("#articleContainer").outerHeight();
+	var lpHeight = $(".lpHeight").outerHeight();
 	
 	if (scrollTop>stickyNavTop&&scrollTop<lpHeight) {​​​​​​​​
 		$('.lp-nav').addClass('fixed');
-	}​​​​​​​​else{​​​​​​​​
+	} ​​​​​​​​else {​​​​​​​​
 		$('.lp-nav').removeClass('fixed');
 	}​​​​​​​​
 }​​​​​​​​;
@@ -31,8 +31,6 @@ $(document).ready(function () {
 	$(window).scroll(function(){​​​​​​​​
 		stickyNav();
 	}​​​​​​​​);
-
-	
 
 	// Slow in-document link animation
 	$('.layout-1 #landingpage a[href*="#"], .layout-0 #landingpage a[href*="#"]')
