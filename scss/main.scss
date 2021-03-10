@@ -5,15 +5,16 @@ $white: #fff ;
 $black: #000;
 $gray: #535252;
 $dark: #262F38;
+$sport: #a1c900;
+$alza: #00275b;
 
 // Imports
 @import "reset";
 @import "mixins";
 @import "settings";
-@import "alza";
 
 // WEB
-#landingpage{
+#lpNav{
     display: block;
     position: relative;
     overflow: hidden;
@@ -143,7 +144,7 @@ $dark: #262F38;
 }
 
 // LAYOUT 0
-.layout-0 #articlePage #landingpage{
+.layout-0 #articlePage #lpNav{
     .lp-container{
         max-width: 860px;
     } 
@@ -164,8 +165,8 @@ $dark: #262F38;
 
 // MOBILE + APP
 @media only screen and (max-width: 980px){
-    .mobile #articlePage #landingpage,
-    .mobileapp #articlePage #landingpage{
+    .mobile #articlePage #lpNav,
+    .mobileapp #articlePage #lpNav{
         .lp-container{
             padding-left: 32px;
             padding-right: 32px;

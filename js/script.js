@@ -13,7 +13,11 @@ var stickyNav = function(){​​​​​​​​
 
 // runner
 $(window).load(function() {
-	$("#landingpage .lp-nav-box").removeClass("navHidden").addClass("navVisible");
+	$("#lpNav").css({
+		'visibility' : 'visible',
+		'opacity' : '1',
+		'transition' : 'all .3s ease-in',
+	});
 	
 	// Sticky nav runner
 	$(window).scroll(function(){​​​​​​​​
@@ -21,7 +25,7 @@ $(window).load(function() {
 	}​​​​​​​​);
 
 	// Slow in-document link animation
-	$('.layout-1 #landingpage a[href*="#"], .layout-0 #landingpage a[href*="#"]')
+	$('.layout-1 #lpNav a[href*="#"], .layout-0 #lpNav a[href*="#"]')
 	// Remove links that don't actually link to anything
 	.not('[href="#"]')
 	.not('[href="#0"]')
