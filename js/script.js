@@ -13,6 +13,8 @@ var stickyNav = function(){​​​​​​​​
 
 // runner
 $(window).load(function() {
+	$("#landingpage .lp-nav-box").removeClass("navHidden").addClass("navVisible");
+	
 	// Sticky nav runner
 	$(window).scroll(function(){​​​​​​​​
 		stickyNav();

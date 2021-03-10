@@ -122,6 +122,14 @@ $dark: #262F38;
         }
     }
 
+    .navHidden{
+        display: none;
+    }
+
+    .navVisible{
+        display: block;
+    }
+
     .fixed{
         position: fixed;
         top: 0;
