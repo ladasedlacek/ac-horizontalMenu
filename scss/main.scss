@@ -49,10 +49,10 @@ $alza: #00275b;
     
                 &--item{
                     &:last-of-type{
-                        padding-right: 0;
+                        margin-right: 0;
                     }
     
-                    padding-right: 32px;
+                    margin-right: 32px;
                 }
 
                 .anotherArticle{
@@ -155,10 +155,10 @@ $alza: #00275b;
     }
 
     .lp-nav__left--item{
-        padding-right: 24px;
+        margin-right: 24px;
 
         &:last-of-type{
-            padding-right: 0;
+            margin-right: 0;
         }
     }
 }
